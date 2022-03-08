@@ -37,9 +37,25 @@ window.onload = function (evt) {
     //mousemove
     document.body.addEventListener('mousemove', evt => {
         const { clientX, clientY} = evt;
-        console.log(`mouse is at ${clientX}, ${clientY}`);
+        // console.log(`mouse is at ${clientX}, ${clientY}`);
+    })
+
+    //mouseenter
+    //mouseleave
+    const destinations = document.querySelectorAll('.destination') 
+    for (let destination of destinations) {
+        destination.addEventListener('mouseenter', () => {
+            destination.style.fontWeight = 'bold'
+        })
+        destination.addEventListener('mouseleave', () => {
+            destination.style.fontWeight = 'initial'
+        })
+    }
+    //select
+    const selected = document.querySelector('img-content')
+    selected.addEventListener('select', () => {
+        console.log('what the fuck')
     })
 }
-
 
 
